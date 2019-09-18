@@ -1,0 +1,29 @@
+---
+title: "My Supercreative Map"
+author: "Ioana M."
+date: "September 18, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r, message=FALSE}
+library(dplyr)
+library(leaflet)
+dotIcon <- makeIcon(
+    iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Heart_left-highlight_jon_01.svg/1920px-Heart_left-highlight_jon_01.svg.png",
+    iconWidth = 31*215/230, iconHeight = 31,
+    iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+heartLatLong <- data.frame(
+    lat = c(40.739716, 40.765683, 40.723964, 40.675868, 40.601200, 40.669204, 40.704035, 40.762356),
+    lng = c(-73.914447, -73.835049, -73.773603, -73.811195, -73.890839, -73.982084, -74.058988, -74.008566))
+
+heartLatLong %>% 
+    leaflet() %>%
+    addTiles() %>% 
+    addMarkers(icon = dotIcon)
+```
