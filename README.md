@@ -1,2 +1,2 @@
 # DevelopingDataProducts
-Test repo for hosting slides on GitHub
+Repo for hosting slides on GitHub
