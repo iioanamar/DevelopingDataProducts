@@ -1,0 +1,33 @@
+---
+title: "Assignment 2: Plotly"
+author: "Ioana M."
+date: "9/27/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Plot of *InsectSprays* Data Set
+
+```{r, message = FALSE}
+library(plotly)
+x <- list(title = "Spray")
+y <- list(title = "Insect Count")
+plot_ly(InsectSprays, y = ~count, color = ~spray, type = "box") %>%
+    layout(xaxis=x, yaxis=y)
+```
+
+## Code
+
+```{r, echo=TRUE, eval=FALSE}
+library(plotly)
+x <- list(title = "Spray")
+y <- list(title = "Insect Count")
+plot_ly(InsectSprays, y = ~count, color = ~spray, type = "box") %>%
+    layout(xaxis=x, yaxis=y)
+```
+
+## Thank you
